@@ -1,0 +1,14 @@
+tunnel: <YOUR_TUNNEL_ID>
+credentials-file: C:\Users\<YOUR_USERNAME>\.cloudflared\<YOUR_TUNNEL_ID>.json
+
+ingress:
+  # Main Vane application
+  - hostname: vane.yourdomain.com
+    service: http://localhost:3000
+  
+  # WorldMonitor dashboard
+  - hostname: monitor.yourdomain.com
+    service: http://localhost:5173
+  
+  # Catch-all rule (required)
+  - service: http_status:404

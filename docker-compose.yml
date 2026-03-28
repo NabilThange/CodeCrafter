@@ -1,6 +1,27 @@
 version: '3.8'
 
 services:
+  # PostgreSQL Database for Justyoo (Kuberaa)
+  postgres:
+    image: postgres:16-alpine
+    container_name: justyoo-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=kuberaa
+      - POSTGRES_PASSWORD=kuberaa_dev_pass
+      - POSTGRES_DB=kuberaa
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kuberaa"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # Vane - AI Search Engine (Main App)
   vane:
     build:
@@ -13,9 +34,33 @@ services:
       - vane-data:/home/vane/data
     environment:
       - NODE_ENV=production
+      - NEXT_PUBLIC_PORTFOLIO_URL=http://justyoo:3001
+      - NEXT_PUBLIC_WORLDMONITOR_URL=http://worldmonitor:5173
     restart: unless-stopped
     networks:
       - app-network
+    depends_on:
+      - justyoo
+      - worldmonitor
+
+  # Justyoo (Kuberaa) - Portfolio Management
+  justyoo:
+    build:
+      context: ./justyoo
+      dockerfile: Dockerfile
+    container_name: justyoo
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://kuberaa:kuberaa_dev_pass@postgres:5432/kuberaa?schema=public
+      - NEXT_PUBLIC_APP_URL=http://localhost:3001
+    restart: unless-stopped
+    networks:
+      - app-network
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   # WorldMonitor - Global Intelligence Dashboard
   worldmonitor:
@@ -48,6 +93,7 @@ services:
 
 volumes:
   vane-data:
+  postgres-data:
 
 networks:
   app-network:
