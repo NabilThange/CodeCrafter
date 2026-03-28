@@ -1,0 +1,546 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.nuxt/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+*.sublime-workspace
+*.sublime-project
+.project
+.pydevproject
+.settings/
+*.iml
+.classpath
+.c9/
+*.launch
+.tern-port
+.vscode-test
+.vscode/*.log
+*.code-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+.mocha_output
+test-results/
+junit.xml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+data/db.sqlite
+prisma/dev.db
+prisma/dev.db-journal
+
+# Uploads & Media
+uploads/
+public/uploads/
+media/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Secrets & Credentials
+.aws/
+.ssh/
+secrets/
+credentials.json
+private_key*
+*.pem
+*.key
+
+# Cache
+.cache/
+.eslintcache
+.stylelintcache
+.parcel-cache
+.next/cache/
+.nuxt/dist/
+dist/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Misc
+.turbo/
+.vercel/
+.netlify/
+.env.*.local
+.pnp
+.pnp.js
+*.tsbuildinfo
+.yarn/install-state.gz
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Vane specific
+Vane/.next/
+Vane/dist/
+Vane/build/
+Vane/node_modules/
+Vane/.env.local
+Vane/.env.*.local
+Vane/data/db.sqlite
+Vane/data/db.sqlite-journal
+Vane/coverage/
+
+# WorldMonitor specific
+worldmonitor/dist/
+worldmonitor/build/
+worldmonitor/node_modules/
+worldmonitor/.env.local
+worldmonitor/.env.*.local
+worldmonitor/coverage/
+worldmonitor/server/dist/
+
+# JustYoo specific
+justyoo/.next/
+justyoo/dist/
+justyoo/build/
+justyoo/node_modules/
+justyoo/.env.local
+justyoo/.env.*.local
+justyoo/prisma/dev.db
+justyoo/prisma/dev.db-journal
+justyoo/coverage/
+
+# Tauri (Desktop app)
+src-tauri/target/
+src-tauri/Cargo.lock
+
+# SearxNG
+searxng/
+.searxng/
+
+# Redis
+dump.rdb
+appendonly.aof
+
+# Nginx
+nginx/logs/
+nginx/cache/
+
+# Cloudflare
+.wrangler/
+wrangler.toml.local
+
+# Vercel
+.vercel/
+.vercel/output/
+
+# Railway
+.railway/
+
+# Sentry
+.sentry/
+
+# Analytics
+.analytics/
+
+# Clerk Auth
+.clerk/
+
+# Convex
+.convex/
+
+# Upstash
+.upstash/
+
+# Certificates & SSL
+*.crt
+*.cert
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+*.swp
+*~
+
+# Generated files
+generated/
+auto-generated/
+*.generated.ts
+*.generated.js
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/tmp/
+/tmp/
+
+# Go
+*.o
+*.a
+*.so
+.DS_Store
+tmp/
+
+# Rust
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+build/
+
+# C/C++
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.dSYM/
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.cab
+*.gz
+*.rar
+*.tar
+*.zip
+*.iso
+*.dmg
+
+# Sensitive data
+secrets.json
+config.secret.json
+private.key
+.credentials
+auth.token
+
+# CI/CD
+.github/workflows/logs/
+.gitlab-ci/logs/
+.circleci/logs/
+
+# Project specific
+COMPREHENSIVE-ARCHITECTURE.md
+ARCHITECTURE.md
+CHECKLIST.md
+COMMANDS.md
+COMPLETE.md
+DONE.md
+FINAL-STATUS.md
+FIX-APPLIED.md
+INTEGRATION-SUMMARY.md
+JUSTYOO-SETUP.md
+NAVIGATION-UPDATE.md
+QUICK-REFERENCE.md
+QUICK-START.md
+README-QUICK.md
+RUN-NOW.md
+SETUP-GUIDE.md
+START-HERE.md
+VISUAL-GUIDE.md
+README-INTEGRATION.md
+
+# Configuration files (local overrides)
+nginx.conf.local
+docker-compose.override.yml
+.env.override
+
+# Temporary build artifacts
+*.tgz
+*.tar.gz
+.turbo/
+.next/cache/
+
+# Lock files (optional - uncomment if you want to commit them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# IDE specific
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules/
+*.sublime-workspace
+
+# System files
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Misc
+.cache
+.parcel-cache
+.next
+out
+.nuxt
+dist
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Storybook
+storybook-static/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Jest
+coverage/
+.nyc_output/
+
+# Vitest
+.vitest/
+
+# Turborepo
+.turbo/
+
+# Nx
+dist/
+nx-cache/
+.nx/cache/
+
+# Lerna
+lerna-debug.log*
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# pnpm
+pnpm-debug.log*
+
+# Monorepo
+.monorepo/
+
+# Local development
+.local/
+.dev/
+.test/
+
+# Vendor
+vendor/
+
+# Compiled Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Misc
+.cache/
+.parcel-cache
+.next
+out
+.nuxt
+dist
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
