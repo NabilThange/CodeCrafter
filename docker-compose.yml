@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # Vane - AI Search Engine (Main App)
+  vane:
+    build:
+      context: ./Vane
+      dockerfile: Dockerfile
+    container_name: vane
+    ports:
+      - "3000:3000"
+    volumes:
+      - vane-data:/home/vane/data
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # WorldMonitor - Global Intelligence Dashboard
+  worldmonitor:
+    build:
+      context: ./worldmonitor
+      dockerfile: Dockerfile
+    container_name: worldmonitor
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Nginx Reverse Proxy (Optional - for unified domain)
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - vane
+      - worldmonitor
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  vane-data:
+
+networks:
+  app-network:
+    driver: bridge
