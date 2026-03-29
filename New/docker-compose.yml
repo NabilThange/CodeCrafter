@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: unified-postgres
+    environment:
+      POSTGRES_USER: unified
+      POSTGRES_PASSWORD: unified_dev_pass
+      POSTGRES_DB: unified_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U unified"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unified-app
+    environment:
+      DATABASE_URL: "postgresql://unified:unified_dev_pass@postgres:5432/unified_platform?schema=public"
+      NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
